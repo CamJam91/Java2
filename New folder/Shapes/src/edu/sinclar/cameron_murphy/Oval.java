@@ -43,6 +43,10 @@ public class Oval extends Shape {
 	public float getEccentricity() {
 		return eccentricity;
 	}
+	public String toString() {
+		return "Oval with area and eccentricity: " + String.valueOf(getArea()) + " " + String.valueOf(getEccentricity()) 
+		+ " " + super.toString();
+	}
 	
 	//setters
 	/**

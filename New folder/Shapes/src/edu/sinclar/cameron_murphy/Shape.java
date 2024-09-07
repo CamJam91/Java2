@@ -95,4 +95,7 @@ public class Shape {
 	public double getArea() {
 		return 0;
 	}
+	public String toString() {
+		return "Point A: " + pointA + "Point B: " + pointB + "Color: " + color;
+	}
 }

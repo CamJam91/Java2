@@ -1,6 +1,5 @@
 package edu.sinclar.cameron_murphy;
 import java.awt.Point;
-
 public class Box extends Shape {
 	private double width;
 	private Shape shape;
@@ -35,6 +34,13 @@ public class Box extends Shape {
 	}
 	
 	//getters
+	public double getWidth() {
+		return width;
+	}
+	public double getLength() {
+		double area = getArea();
+		return area/width;
+	}
 	/**
 	 * uses the Pythagorean theorem length=sqrt of diagonal^2-width^2
 	 * @return
@@ -43,6 +49,10 @@ public class Box extends Shape {
 		double diagonal = shape.getLineLength(); //get the length of the diagonal line
 		double length = Math.sqrt((diagonal*diagonal)-(width*width)); //use theorem to figure length
 		return length * width;
+	}
+	public String toString() {
+		return "Box with width, Length and Area: " + String.valueOf(width) + " " +
+				String.valueOf(getLength()) + " "  + String.valueOf(getArea()) + " " + shape;
 	}
 	
 }

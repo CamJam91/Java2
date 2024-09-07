@@ -19,4 +19,13 @@ public class Line extends Shape {
 	public Line(Point pointA, Point pointB, String color) {
 		shape = new Shape(pointA, pointB, color);
 	}
+	//getters
+	/**
+	 * custom toString() calls super toString()
+	 */
+	public String toString() {
+		double line =  shape.getLineLength();
+		return "Line with length: " + String.valueOf(line) + shape; 
+		
+	}
 }
