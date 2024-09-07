@@ -1,3 +1,10 @@
+/*
+ * Cameron Murphy
+ * Shape
+ * 9/7/2024
+ * CIS 2217 R01
+ * Tester for shape classes
+ */
 package edu.sinclar.cameron_murphy;
 import java.awt.Point;
 public class Box extends Shape {
@@ -51,8 +58,8 @@ public class Box extends Shape {
 		return length * width;
 	}
 	public String toString() {
-		return "Box with width, Length and Area: " + String.valueOf(width) + " " +
-				String.valueOf(getLength()) + " "  + String.valueOf(getArea()) + " " + shape;
+		return "Box with width, Length and Area: " + String.format("%.2f",width) + " " +
+				String.format("%.2f",getLength()) + " "  + String.format("%.2f",getArea()) + " " + shape;
 	}
 	
 }

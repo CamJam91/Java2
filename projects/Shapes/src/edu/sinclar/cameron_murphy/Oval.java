@@ -1,10 +1,17 @@
+/*
+ * Cameron Murphy
+ * Shape
+ * 9/7/2024
+ * CIS 2217 R01
+ * Tester for shape classes
+ */
 package edu.sinclar.cameron_murphy;
 import java.awt.Point;
 
 public class Oval extends Shape {
 	private double majorAxis; //this is the line that connects the 2 shape points
 	private double minorAxis;
-	private float eccentricity;
+	private double eccentricity;
 	private Shape shape;
 	final double pi = 3.14159;
 	
@@ -25,7 +32,7 @@ public class Oval extends Shape {
 	 * @param color
 	 * @param eccentricity
 	 */
-	public Oval(Point pointA, Point pointB, String color, float eccentricity) {
+	public Oval(Point pointA, Point pointB, String color, double eccentricity) {
 		shape = new Shape(pointA, pointB, color);
 		this.eccentricity = eccentricity;
 		majorAxis = shape.getLineLength();
@@ -40,12 +47,12 @@ public class Oval extends Shape {
 	public double getArea() {
 		return pi * majorAxis * minorAxis;
 	}
-	public float getEccentricity() {
+	public double getEccentricity() {
 		return eccentricity;
 	}
 	public String toString() {
-		return "Oval with area and eccentricity: " + String.valueOf(getArea()) + " " + String.valueOf(getEccentricity()) 
-		+ " " + super.toString();
+		return "Oval with area and eccentricity: " + String.format("%.2f",getArea()) + " " + String.format("%.2f",getEccentricity()) 
+		+ " " + shape;
 	}
 	
 	//setters
@@ -53,7 +60,7 @@ public class Oval extends Shape {
 	 * sets eccentricity, minorAxis must be recalculated 
 	 * @param eccentricity
 	 */
-	public void setEccentricity(float eccentricity) {
+	public void setEccentricity(double eccentricity) {
 		this.eccentricity = eccentricity;
 		minorAxis = (majorAxis/2)*Math.sqrt(1-(eccentricity*eccentricity));
 		
