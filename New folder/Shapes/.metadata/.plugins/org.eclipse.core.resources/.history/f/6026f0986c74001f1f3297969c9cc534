@@ -1,0 +1,10 @@
+package edu.sinclair.cameron_murphy;
+
+import java.awt.Color;
+import java.awt.Point;
+
+public class HouseBase {
+	public static void draw() {
+		Box houseBase = new Box(new Point(200,760), new Color(168, 98, 50),400, 300);
+	}
+}

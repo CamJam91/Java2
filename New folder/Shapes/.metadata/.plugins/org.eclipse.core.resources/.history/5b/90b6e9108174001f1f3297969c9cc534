@@ -1,0 +1,13 @@
+package edu.sinclair.cameron_murphy;
+
+import java.awt.Graphics;
+
+public class Line extends Shape {
+
+	@Override
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

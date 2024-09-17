@@ -1,0 +1,11 @@
+package edu.sinclair.cameron_murphy;
+
+import java.awt.Color;
+import java.awt.Point;
+
+public class Sky {
+	public static void draw() {
+		Box sky = new Box(new Point(0,0),new Color(52, 140, 235),1000,700);
+		sky.draw(g);
+	}
+}

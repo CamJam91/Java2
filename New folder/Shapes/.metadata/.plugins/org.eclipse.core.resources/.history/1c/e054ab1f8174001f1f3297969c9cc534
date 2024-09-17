@@ -1,0 +1,14 @@
+package edu.sinclair.cameron_murphy;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
+
+public class Window {
+	public Window(Graphics g, Point pointA, Color color, int width, int height) {
+		Box windowBase = new Box(pointA, color, width, height);
+		Line horizontal = new Line(new Point((int)(pointA.getX(), (int)((pointA.getY() + (pointA.getY() + height)/2))), new Point((int)(pointA.getX() + width), (int)(((pointA.getY() + (pointA.getY() + height)/2)))), Color.BLACK, 5);
+		windowBase.draw(g);
+		horizontal.draw(g);
+	}
+}

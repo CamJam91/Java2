@@ -1,0 +1,25 @@
+package edu.sinclair.cameron_murphy;
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Point;
+
+public class PictureComponent extends Component {
+	public void paintComponent(Graphics g) {
+		Scenery.backGround(g);
+	}
+	static class Scenery{
+		public static void backGround(Graphics g) {
+			Ground.draw(g);
+		}
+		
+		public static class Ground{
+		public static void draw(Graphics g) {
+			Box ground = new Box(new Point(0,0), new Color(0,255,0),500,300);
+			ground.draw(g);
+		}
+	}
+	}
+	
+}

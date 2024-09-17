@@ -1,0 +1,11 @@
+package edu.sinclair.cameron_murphy;
+
+public class Box extends Shape {
+
+	@Override
+	public double getArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

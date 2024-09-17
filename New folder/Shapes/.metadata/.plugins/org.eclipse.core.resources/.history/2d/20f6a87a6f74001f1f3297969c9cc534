@@ -1,0 +1,20 @@
+package edu.sinclair.cameron_murphy;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
+
+public class Oval extends Shape {
+
+	private int width;
+	private int height;
+	
+	public oval(Point pointA, Point pointB, Color color, int width, int height) {
+		super(pointA, pointB, color);
+	}
+	@Override
+	public void draw(Graphics g) {
+		
+	}
+
+}

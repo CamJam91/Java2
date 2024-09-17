@@ -1,0 +1,11 @@
+package edu.sinclair.cameron_murphy;
+
+public class House {
+	public static void draw() {
+		HouseBase.draw();
+		//Door.draw();
+		//Roof.draw();
+	
+	}
+	
+}

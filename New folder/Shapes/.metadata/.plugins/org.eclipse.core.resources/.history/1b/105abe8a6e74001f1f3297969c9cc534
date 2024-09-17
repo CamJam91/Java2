@@ -1,0 +1,11 @@
+package edu.sinclair.cameron_murphy;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
+
+public class Door {
+	public static void draw(Graphics g) {
+		Box door = new Box(new Point(350, 600),new Color(59, 32, 15), 100, 100);
+	}
+}

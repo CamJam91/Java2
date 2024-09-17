@@ -1,0 +1,40 @@
+package edu.sinclair.cameron_murphy;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
+
+public class Roof {
+	public static void draw(Graphics g) {
+		Box chimney = new Box(new Point(525, 250), Color.BLACK, 75, 200);
+		chimney.draw(g);
+		Triangle roof = new Triangle(new Point(150,500), new Point(750,500), new Color(64, 26, 0), 250);
+		roof.draw(g);
+
+			//points for the ovals
+		Point pointA = new Point(540,200);
+		Point pointB = new Point(560,190);
+		int width = 90;
+		int height = 45;
+		Oval smoke = new Oval(pointA, pointB, new Color(202, 224, 224), width, height);
+		smoke.draw(g);
+		pointA.setLocation(pointA.getX()+48, pointA.getY()-35);
+		pointB.setLocation(pointB.getX()+48, pointB.getY()-35);
+		width = width-10;
+		height = height-10;
+		smoke = new Oval(pointA, pointB, new Color(202, 224, 224), width, height);
+		smoke.draw(g);
+		pointA.setLocation(pointA.getX()-40, pointA.getY()-30);
+		pointB.setLocation(pointB.getX()-40, pointB.getY()-30);
+		width = width-10;
+		height = height-10;
+		smoke = new Oval(pointA, pointB, new Color(202, 224, 224), width, height);
+		smoke.draw(g);
+		pointA.setLocation(pointA.getX()+48, pointA.getY()-35);
+		pointB.setLocation(pointB.getX()+48, pointB.getY()-35);
+		width = width-10;
+		height = height-10;
+		smoke = new Oval(pointA, pointB, new Color(202, 224, 224), width, height);
+		smoke.draw(g);
+	}
+}
