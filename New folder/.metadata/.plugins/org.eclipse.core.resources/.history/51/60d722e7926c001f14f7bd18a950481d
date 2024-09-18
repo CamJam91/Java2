@@ -1,0 +1,32 @@
+package edu.sinclar.cameron_murphy;
+import java.awt.Point;
+
+public class Oval extends Shape {
+	private double majorAxis; //this is the line that connects the 2 shape points
+	private double minorAxis;
+	private float eccentricity;
+	private Shape shape;
+	
+	//constructors
+	/**
+	 * default constructor with null values
+	 */
+	public Oval(){
+		shape = new Shape();
+		majorAxis = 0;
+		minorAxis = 0;
+	}
+	/**
+	 * arg constructor, sets eccentricity and axes
+	 * @param pointA
+	 * @param pointB
+	 * @param color
+	 * @param eccentricity
+	 */
+	public Oval(Point pointA, Point pointB, String color, float eccentricity) {
+		shape = new Shape(pointA, pointB, color);
+		this.eccentricity = eccentricity;
+		majorAxis = shape.getLineLength();
+		
+	}
+}

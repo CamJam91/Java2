@@ -1,0 +1,6 @@
+package edu.sinclar.cameron_murphy;
+import java.awt.Point;
+
+public class Tester {
+	
+}

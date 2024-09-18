@@ -1,0 +1,101 @@
+package edu.sinclar.cameron_murphy;
+import java.awt.Point;
+import java.awt.Graphics;
+
+public class Shape {
+	private Point pointA;
+	private Point pointB;
+	private String color;
+	
+	//constructors
+	/**
+	 * default constructor values == null
+	 */
+	public Shape(){
+		pointA = null;
+		pointB = null;
+		color = null;
+	}
+	/**
+	 * arg constructor
+	 * @param pointA
+	 * @param pointB
+	 * @param color
+	 */
+	public Shape(Point pointA, Point pointB, String color){
+		this.pointA = pointA;
+		this.pointB = pointB;
+		this.color = color;
+	}
+	
+	//setters
+	
+	/**
+	 * sets a Point variable to a new Point
+	 * @param point
+	 * @param c
+	 */
+	public void setPoint(Point point, char c) {
+		if (c == 'A')
+			this.pointA = point;
+		else if(c == 'B')
+			this.pointB = point;
+		else
+			System.out.printf("%s is not a valid point", c);
+	}
+	/**
+	 * sets the color variable
+	 * @param color
+	 */
+	public void setColor(String color) {
+		this.color = color;
+	}
+	
+	//getters
+	/**
+	 * gets either point A or B
+	 * @param point
+	 * @return
+	 */
+	public Point getPoint(char point) {
+		if (point == 'A')
+			return pointA;
+		else
+			return pointB;
+	}
+	/**
+	 * returns the color of this shape
+	 * @return
+	 */
+	public String getColor() {
+		return color;
+	}
+	/**
+	 *returns distance of opposite points of line
+	 * @return
+	 */
+	public double getLineLength() {
+		Point pointA = getPoint('A');
+		Point pointB = getPoint('B');
+		double length = pointA.distance(pointB);
+		return length;
+	}
+	
+	//methods
+	/**
+	 * stub method for drawing shapes
+	 * @param g
+	 */
+	public void draw(Graphics g) {
+		System.out.println("Draw has been called"); //stub
+	}
+	/**
+	 * child objects will override, otherwise it is set to 0
+	 */
+	public double getArea() {
+		return 0;
+	}
+	public String toString() {
+		return "Point A: " + pointA + "Point B: " + pointB + "Color: " + color;
+	}
+}

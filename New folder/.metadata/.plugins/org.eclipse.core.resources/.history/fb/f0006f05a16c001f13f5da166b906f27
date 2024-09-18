@@ -1,0 +1,48 @@
+package edu.sinclar.cameron_murphy;
+import java.awt.Point;
+
+public class Box extends Shape {
+	private double width;
+	private Shape shape;
+	
+	//constructors
+	/**
+	 * no arg constructor
+	 */
+	public Box() {
+		this.width = 0;
+		shape = new Shape();
+	}
+	/**
+	 * arg constructor creates Shape and fills width
+	 * @param pointA
+	 * @param pointB
+	 * @param color
+	 * @param width
+	 */
+	public Box(Point pointA, Point pointB, String color, double width) {
+		this.width = width;
+		shape = new Shape(pointA, pointB, color);
+	}
+	
+	//setters
+	/**
+	 * set width of box
+	 * @param width
+	 */
+	public void setWidth(double width) {
+		this.width = width;
+	}
+	
+	//getters
+	/**
+	 * uses the Pythagorean theorem length=sqrt of diagonal^2-width^2
+	 * @return
+	 */
+	public double getArea() {
+		double diagonal = shape.getLineLength(); //get the length of the diagonal line
+		double length = Math.sqrt((diagonal*diagonal)-(width*width)); //use theorem to figure length
+		return length * width;
+	}
+	
+}

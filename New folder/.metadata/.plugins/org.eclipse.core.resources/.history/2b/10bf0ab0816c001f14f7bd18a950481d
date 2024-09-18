@@ -1,0 +1,20 @@
+package edu.sinclar.cameron_murphy;
+import java.awt.Point;
+
+public class Line extends Shape {
+	//constructors
+	public Line() {
+		Shape();
+	}
+	//methods
+	/**
+	 * returns distance of opposite points of line
+	 * @return
+	 */
+	public double getLength() {
+		Point pointA = getPoint('A');
+		Point pointB = getPoint('B');
+		double length = pointA.distance(pointB);
+		return length;
+	}
+}

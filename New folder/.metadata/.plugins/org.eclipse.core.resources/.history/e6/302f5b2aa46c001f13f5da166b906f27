@@ -1,0 +1,16 @@
+package edu.sinclar.cameron_murphy;
+import java.awt.Point;
+
+public class Tester {
+	public static void main(String[] args) {
+	//shape test
+	Point pointA = new Point(10,12);
+	Point pointB = new Point(14,20);
+	Shape testShape = new Shape(pointA, pointB,"Red");
+	System.out.println(testShape);
+	
+	Box testBox = new Box(pointA, pointB, "Blue", 15);
+	System.out.println(testBox);
+	}
+	
+}
