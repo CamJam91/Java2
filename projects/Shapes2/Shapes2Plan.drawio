@@ -1,0 +1,70 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="Page-1" id="fbBzmRfheNy0bYfE6vhm">
+    <mxGraphModel dx="2284" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aEudMgFGDvakhfUvLchd-8" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="10" width="770" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-1" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Requirements&lt;/font&gt;&lt;/b&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-2" value="Implement draw logic in each shape class" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-3" value="Declare enum to define shapes, declare variable to keep track of current shape" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="340" y="200" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-4" value="Create variable that holds current color, initialize with starting color" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="220" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-5" value="When mouse is pressed, create current shape and color, shape needs starting and ending point, current mouse location for both points" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="360" y="80" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-6" value="Trails on needs a mouseDragged event" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="510" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-7" value="listen for keyPressed events" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="190" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="aEudMgFGDvakhfUvLchd-10" target="aEudMgFGDvakhfUvLchd-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-10" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;TaskList&lt;/b&gt;&lt;/font&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry y="350" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="aEudMgFGDvakhfUvLchd-12" target="aEudMgFGDvakhfUvLchd-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-12" value="Write Problem in own words, create rough sketch of game plan" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="350" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-14" value="Create UML diagram&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="350" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="aEudMgFGDvakhfUvLchd-15" target="aEudMgFGDvakhfUvLchd-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-15" value="Create basic Frame structure" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="480" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="aEudMgFGDvakhfUvLchd-18" target="aEudMgFGDvakhfUvLchd-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-18" value="Square Shape draft" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="480" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="aEudMgFGDvakhfUvLchd-19" target="aEudMgFGDvakhfUvLchd-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-19" value="Listener draft" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aEudMgFGDvakhfUvLchd-22" value="Listener Test" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
