@@ -1,0 +1,2 @@
+INDEX VERSION 1.134+C:\Users\camer\Documents\GitHub\Java2\projects\Shapes\.metadata\.plugins\org.eclipse.jdt.core
+1554799930.index
