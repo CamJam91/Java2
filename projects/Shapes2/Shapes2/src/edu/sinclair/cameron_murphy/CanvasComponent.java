@@ -47,6 +47,9 @@ public class CanvasComponent extends JComponent {
     	case ShapeType.BOX:
     		shapes.add(new Box(startPoint, p, currentColor));
     		break;
+    	case ShapeType.OVAL:
+    		shapes.add(new Oval(startPoint, p, currentColor));
+    		break;
     	}
     }
 
