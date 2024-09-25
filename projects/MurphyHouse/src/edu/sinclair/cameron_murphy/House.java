@@ -1,0 +1,19 @@
+package edu.sinclair.cameron_murphy;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
+
+public class House {
+	public static void draw(Graphics g) {
+		HouseBase.draw(g);
+		Door.draw(g);
+		Roof.draw(g);
+		Window windowLeft = new Window(g, new Point(300, 650), Color.WHITE, 50, 50);
+		Window windowRight = new Window(g, new Point(550,650), Color.WHITE, 50,50);
+		Window windowTopLeft = new Window(g, new Point(290,530), Color.WHITE, 70, 80);
+		Window windowTopRight = new Window(g, new Point(550,530), Color.WHITE, 70, 80);
+		Window windowMiddle = new Window(g, new Point(400, 300), new Point(550, 300), Color.WHITE, 100,100);
+	}
+	
+}
