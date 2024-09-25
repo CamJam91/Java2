@@ -40,7 +40,17 @@ public class CanvasComponent extends JComponent {
      * @param p
      */
     public void addShape(Point p){
-        shapes.add(new Line(startPoint, p, currentColor));
+    	switch (currentShape) {
+    	case ShapeType.LINE: 
+    		shapes.add(new Line(startPoint, p, currentColor));
+    		break;
+    	case ShapeType.BOX:
+    		shapes.add(new Box(startPoint, p, currentColor));
+    		break;
+    	case ShapeType.OVAL:
+    		shapes.add(new Oval(startPoint, p, currentColor));
+    		break;
+    	}
     }
 
     public void dragShape(Point p){
@@ -48,7 +58,7 @@ public class CanvasComponent extends JComponent {
             addShape(p);
             repaint();
         }else{
-            shapes.get(shapes.size()-1).setP2(p); //set endpoint for last shape
+            shapes.get(shapes.size()-1).setP2(p); //set endpoint for final shape to be repainted
             repaint();
         }
     }
@@ -59,8 +69,10 @@ public class CanvasComponent extends JComponent {
             	currentShape = ShapeType.BOX;
                 break;
             case 'l':
+            	currentShape = ShapeType.LINE;
                 break;
             case 'o':
+            	currentShape = ShapeType.OVAL;
                 break;
             case 'e':
                 shapes.clear();

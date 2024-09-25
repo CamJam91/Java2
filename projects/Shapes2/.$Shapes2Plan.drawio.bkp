@@ -47,7 +47,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="aEudMgFGDvakhfUvLchd-15" value="Create basic Frame structure" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="205" y="480" width="140" height="80" as="geometry" />
+          <mxGeometry x="200" y="480" width="140" height="80" as="geometry" />
         </mxCell>
         <mxCell id="aEudMgFGDvakhfUvLchd-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="aEudMgFGDvakhfUvLchd-18" target="aEudMgFGDvakhfUvLchd-19">
           <mxGeometry relative="1" as="geometry" />
