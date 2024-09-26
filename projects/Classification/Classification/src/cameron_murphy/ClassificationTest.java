@@ -41,5 +41,16 @@ class ClassificationTest {
 		assertEquals(phylum.getPhylum(), "Chordata");
 		assertEquals(antsEaten, 196);
 	}
+	
+	@Test
+	void VenusFlyTrap() {
+			//Arrange
+		VenusFlyTrap testFlyTrap = new VenusFlyTrap("Plantae", "Tracheophytes", "Angiosperms", 
+				"Caryophyllales", "Droseraceae", "Dionaea", "D.Muscipula", false, "Venus Fly Trap");
+			//Act
+		int antsEaten = testFlyTrap.getAntsEaten();
+		String test = testFlyTrap.toString();
+		assertEquals(test, "Domain: Eukarya, Kingdom: Plantae Class: Angiosperms Order: Caryophyllales Family: Droseraceae Genus: Dionaea Species: D.Muscipula Name: Venus Fly Trap Ants Eaten: 0");
+	}
 
 }
