@@ -5,8 +5,8 @@ package cameron_murphy;
 public class Order extends Class {
 	private String order;
 	
-	public Order(String kingdom, String className, String order, Boolean extinct) {
-		super(kingdom, className, extinct);
+	public Order(String kingdom, String tier, String className, String order, Boolean extinct) {
+		super(kingdom, tier, className, extinct);
 		this.order = order;
 	}
 	

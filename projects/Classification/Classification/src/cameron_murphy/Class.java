@@ -4,8 +4,8 @@ package cameron_murphy;
 public class Class extends Kingdom {
 	private String className;
 	
-	public Class(String kingdom, String className, Boolean extinct) {
-		super(kingdom, extinct);
+	public Class(String kingdom, String tier, String className, Boolean extinct) {
+		super(kingdom, tier, extinct);
 		this.className = className;
 	}
 	

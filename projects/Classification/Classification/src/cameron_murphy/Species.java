@@ -5,8 +5,8 @@ package cameron_murphy;
 public class Species extends Genus {
 	private String species;
 	
-	public Species(String kingdom, String className, String order, String family, String genus, String species,  Boolean extinct) {
-		super(kingdom, className, order, family, genus, extinct);
+	public Species(String kingdom, String tier, String className, String order, String family, String genus, String species,  Boolean extinct) {
+		super(kingdom, tier, className, order, family, genus, extinct);
 		this.species = species;
 	}
 	

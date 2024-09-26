@@ -3,5 +3,19 @@ package cameron_murphy;
 //aggregate class for plantae kingdom objects
 
 public class Division {
-	final String DIVISION = "Division";
+	private String division;
+	
+	public Division(String division) {
+		this.division = division;
+	}
+	
+		//getters
+	public String getDivision() {
+		return division;
+	}
+	
+		//setters
+	public void setDivision(String division) {
+		this.division = division;
+	}
 }

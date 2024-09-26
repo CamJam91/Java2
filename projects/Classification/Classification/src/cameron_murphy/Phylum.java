@@ -3,5 +3,19 @@ package cameron_murphy;
 //aggregate class for animalia kingdom objects
 
 public class Phylum {
-	final String PHYLUM = "Phylum";
+	private String phylum;
+	
+	public Phylum(String phylum) {
+		this.phylum = phylum;
+	}
+	
+	//getters
+		public String getPhylum() {
+			return phylum;
+		}
+		
+			//setters
+		public void setPhylum(String phylum) {
+			this.phylum = phylum;
+		}
 }

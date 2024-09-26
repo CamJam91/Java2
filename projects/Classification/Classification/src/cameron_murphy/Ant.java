@@ -10,9 +10,9 @@ public class Ant extends Species implements PreyAnimal, CasteAnimal {
 	private Caste caste;
 	
 		//constructors
-	public Ant(String kingdom, String className, String order, String family, String genus, String species,
+	public Ant(String kingdom, String tier, String className, String order, String family, String genus, String species,
 			Boolean extinct, String name, String caste) {
-		super(kingdom, className, order, family, genus, species,extinct);
+		super(kingdom, tier, className, order, family, genus, species,extinct);
 		this.name = name;
 		setCaste(caste);
 	}
@@ -53,7 +53,7 @@ public class Ant extends Species implements PreyAnimal, CasteAnimal {
 			preyStatus = "This animal has been eaten";
 		else
 			preyStatus = "This animal is alive";
-		return super.toString() + " Name: " + name + " Caste: " + String.valueOf(caste) + 
+		return super.toString() + " Name: " + name + " Caste: " + String.valueOf(caste) + " " + preyStatus;
 	}
 
 	

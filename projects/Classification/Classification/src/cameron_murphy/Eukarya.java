@@ -4,18 +4,9 @@ package cameron_murphy;
 
 public abstract class Eukarya {
 	final String domain = "Eukarya";
-	private String kingdom;
 	private Boolean extinct;
-	private Object tier;
 	
-	public Eukarya(String kingdom, Boolean extinct) {
-		this.kingdom = kingdom;
-		this.extinct = extinct;
-		if(kingdom.toLowerCase().equals("animalia")) {
-			tier = new Phylum();
-		}else if(kingdom.toLowerCase().equals("plantae")) {
-			tier = new Division();
-		}
+	public Eukarya(Boolean extinct) {
 		this.extinct = extinct;
 	};
 	
@@ -24,14 +15,8 @@ public abstract class Eukarya {
 	public String getDomain() {
 		return domain;
 	}
-	public String getKingdom() {
-		return kingdom;
-	}
 	public Boolean getExtinct() {
 		return extinct;
-	}
-	public Object getTier() {
-		return tier;
 	}
 	
 		//setters
