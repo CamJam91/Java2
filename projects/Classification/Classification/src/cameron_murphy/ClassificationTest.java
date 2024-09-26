@@ -16,11 +16,14 @@ class ClassificationTest {
 		String caste = testAnt.getCaste();
 		testAnt.setEaten(true);
 		Boolean eaten = testAnt.getEaten();
+		String domain = testAnt.getDomain();
+		Phylum phylum = (Phylum) testAnt.getTier();
 			//Assert
 		assertEquals(extinct, false);
 		assertEquals(caste, "QUEEN");
 		assertEquals(eaten, true);
-
+		assertEquals(domain, "Eukarya");
+		assertEquals(phylum.getPhylum(), "Animalia");
 	}
 
 }

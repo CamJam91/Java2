@@ -5,6 +5,14 @@ public class Kingdom extends Eukarya {
 	private String kingdom;
 	private Object tier;
 	
+	/**
+	 * Kingdom Class implements Eukarya and handles Phylum/Division object creation (called tier)
+	 * then downcasts tier into either Phylum or Division. getTier can then be used to copy this into
+	 * local Phylum or Division classes as needed
+	 * @param kingdom
+	 * @param tier
+	 * @param extinct
+	 */
 	public Kingdom(String kingdom, String tier, boolean extinct) {
 		super(extinct);
 		this.kingdom = kingdom;

@@ -5,6 +5,10 @@ package cameron_murphy;
 public class Phylum {
 	private String phylum;
 	
+	/**
+	 * Phylum class objects are normally instantiated by kingdom class
+	 * @param phylum
+	 */
 	public Phylum(String phylum) {
 		this.phylum = phylum;
 	}

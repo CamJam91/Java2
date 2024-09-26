@@ -6,6 +6,10 @@ public abstract class Eukarya {
 	final String domain = "Eukarya";
 	private Boolean extinct;
 	
+	/**
+	 * Eukarya handles extinct and makes kingdom create a toString() override that will cascade down our heirarchy
+	 * @param extinct
+	 */
 	public Eukarya(Boolean extinct) {
 		this.extinct = extinct;
 	};

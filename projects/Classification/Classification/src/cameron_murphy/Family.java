@@ -5,6 +5,14 @@ package cameron_murphy;
 public class Family extends Order {
 	private String family;
 	
+	/**
+	 * @param kingdom
+	 * @param tier
+	 * @param className
+	 * @param order
+	 * @param family
+	 * @param extinct
+	 */
 	public Family(String kingdom, String tier, String className, String order, String family,  Boolean extinct) {
 		super(kingdom, tier, className, order,extinct);
 		this.family = family;

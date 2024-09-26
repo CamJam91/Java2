@@ -10,6 +10,19 @@ public class Ant extends Species implements PreyAnimal, CasteAnimal {
 	private Caste caste;
 	
 		//constructors
+	/**
+	 * Ant has an enumerated caste variable that describes its caste status, this is implemented from CasteAnimal  
+	 * @param kingdom
+	 * @param tier
+	 * @param className
+	 * @param order
+	 * @param family
+	 * @param genus
+	 * @param species
+	 * @param extinct
+	 * @param name
+	 * @param caste
+	 */
 	public Ant(String kingdom, String tier, String className, String order, String family, String genus, String species,
 			Boolean extinct, String name, String caste) {
 		super(kingdom, tier, className, order, family, genus, species,extinct);

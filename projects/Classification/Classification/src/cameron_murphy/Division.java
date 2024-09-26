@@ -5,6 +5,10 @@ package cameron_murphy;
 public class Division {
 	private String division;
 	
+	/**
+	 * Division class objects are normally instantiated by kingdom class
+	 * @param division
+	 */
 	public Division(String division) {
 		this.division = division;
 	}

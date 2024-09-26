@@ -5,6 +5,13 @@ package cameron_murphy;
 public class Order extends Class {
 	private String order;
 	
+	/**
+	 * @param kingdom
+	 * @param tier
+	 * @param className
+	 * @param order
+	 * @param extinct
+	 */
 	public Order(String kingdom, String tier, String className, String order, Boolean extinct) {
 		super(kingdom, tier, className, extinct);
 		this.order = order;
