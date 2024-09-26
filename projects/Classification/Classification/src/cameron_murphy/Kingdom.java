@@ -17,10 +17,10 @@ public class Kingdom extends Eukarya {
 		super(extinct);
 		this.kingdom = kingdom;
 		if(kingdom.toLowerCase().equals("animalia")) {
-			Phylum tempPhylum = new Phylum("Animalia");
+			Phylum tempPhylum = new Phylum(tier);
 			this.tier = tempPhylum;
 		}else if(kingdom.toLowerCase().equals("plantae")) {
-			Division tempDivision = new Division("Plantae");
+			Division tempDivision = new Division(tier);
 			this.tier = tempDivision;
 		}
 		this.kingdom = kingdom;

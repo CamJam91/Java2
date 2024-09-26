@@ -9,7 +9,7 @@ class ClassificationTest {
 	@Test
 	void antTest() {
 			//arrange
-		Ant testAnt = new Ant("Animalia", "Antropoda", "Insecta", "Hymenoptera",
+		Ant testAnt = new Ant("Animalia", "Anthropoda", "Insecta", "Hymenoptera",
 				"Formicidae", "Paraponera", "P.Clavata", false, "Bullet Ant", "Queen");
 			//Act
 		Boolean extinct = testAnt.getExtinct();
@@ -23,7 +23,23 @@ class ClassificationTest {
 		assertEquals(caste, "QUEEN");
 		assertEquals(eaten, true);
 		assertEquals(domain, "Eukarya");
-		assertEquals(phylum.getPhylum(), "Animalia");
+		assertEquals(phylum.getPhylum(), "Anthropoda");
+	}
+	
+	@Test
+	void aardvarkTest() {
+			//Arrange
+		Aardvark testAardvark = new Aardvark("Animalia", "Chordata", "Mammalia", "Tubulidentata", "Orycteropodidae", 
+				"Orycteropus", "O.afer", false, "African Ant Bear");
+			//Act
+		Phylum phylum = (Phylum)testAardvark.getTier();
+		for (int count = 0; count < 196; count++) {
+			testAardvark.eatAnt();
+		}
+		int antsEaten = testAardvark.getAntsEaten();
+			//Act
+		assertEquals(phylum.getPhylum(), "Chordata");
+		assertEquals(antsEaten, 196);
 	}
 
 }
