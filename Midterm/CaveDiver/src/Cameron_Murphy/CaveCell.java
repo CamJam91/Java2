@@ -1,21 +1,30 @@
 package Cameron_Murphy;
 
-import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Point;
+import java.util.Random;
 
-public class CaveCell extends Box{
+
+public class CaveCell{
+	Point p1;
+	final int width = 70;
+	final int height = 70;
 	private int depth;
+	private Color color;
+	final Font font = new Font("Times new Roman", Font.PLAIN, 18);
 	
 		//constructors
-	public CaveCell() {
-		//TODO: use randomizer method to create random color & depth values
-	}
-	public CaveCell(Point p1, Point p2, int depth){
-		super(p1, p2, new Color(13,234,179,(depth/10)));
-		this.depth = depth;
+	/**
+	 * This constructor lacks a depth int as a parameter. It is created with the randomize() method. 
+	 * @param p1
+	 */
+	public CaveCell(Point p1) {
+		this.p1 = p1;
+		randomize(); //random depth is now set
+			//alpha is a fraction of depth
+		color = new Color(13,234,179,(depth*25));
 	}
 	
 		//setters
@@ -29,16 +38,25 @@ public class CaveCell extends Box{
 	}
 	
 		//methods
+	/**
+	 * randomize depth int of cell
+	 */
 	public void randomize() {	
-		//TODO: create randomizer method using random number generators
-	}
-	@Override
-	public void draw(Graphics g) {
-		Graphics2D g2 = (Graphics2D) g;
-    	g2.setStroke(new BasicStroke(getLineWidth()));
-        g2.setColor(getColor());
-        g2.fillPolygon(new int [] {(int)(super.getP1().getX()), (int)(p3.getX()), (int)(super.getP2().getX()), (int)(p4.getX())}, 
-        		new int[] {(int)(super.getP1().getY()),  (int)(p3.getY()), (int)(super.getP2().getY()), (int)(p4.getY())}, POINTS);
+		Random random = new Random();
+		int newDepth = random.nextInt(10);
+		depth = newDepth; 
 	}
 	
+	/**
+	 * Paint cell with number in it
+	 * @param g
+	 */
+	public void paint(Graphics g) {
+		//test
+		g.setColor(color);
+    	g.fillRect((int)this.p1.x, (int)this.p1.y, width, height);
+		g.setFont(font);
+		g.setColor(Color.BLACK);
+		g.drawString(String.valueOf(depth), (int)p1.x + 2, (int)p1.y+18);
+	}
 }

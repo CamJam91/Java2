@@ -1,6 +1,8 @@
 package Cameron_Murphy;
 
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -51,12 +53,16 @@ public class CaveFrame extends JFrame {
 		add(southPanel, BorderLayout.SOUTH);
 		
 			//Center Component
-		JComponent cave = new CaveComponent();
+		CaveComponent cave = new CaveComponent();
 		add(cave, BorderLayout.CENTER);
+		
+			//buttons
+		caveBTN.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				cave.randomize();
+				repaint();
+			}
+		});
 	}
 
-		private JButton JButton() {
-			// TODO Auto-generated method stub
-			return null;
-		}
 }
