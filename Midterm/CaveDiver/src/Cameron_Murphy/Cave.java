@@ -1,4 +1,5 @@
 package Cameron_Murphy;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ public class Cave {
 	final int CELL_COUNT = 50;
 	final int ROW_COUNT = 10;
 	final int COLUMN_COUNT = 10;
-	private ArrayList<ArrayList<CaveCell>> Cells = new ArrayList<>();
+	private CaveCell[][] cells = new CaveCell[10][10];
 	
 	/**
 	 * an outer loop tracks our row and inserts different coordinates
@@ -16,13 +17,10 @@ public class Cave {
 	 */
 	public Cave(Point p1) {
 			//fill our 2d array
-		for (int colCount = 0; colCount < ROW_COUNT; colCount++) {
-			ArrayList<CaveCell> CellRow = new ArrayList<>();
-			for(int rowCount = 0; rowCount < COLUMN_COUNT; rowCount++) {
-				Point row = new Point(p1.x + (rowCount*70), p1.y + (colCount*70));
-				CellRow.add(new CaveCell(new Point(row)));
+		for (int rowCount = 0; rowCount < 10; rowCount++) {
+			for (int colCount = 0; colCount < 10; colCount++) {
+				cells[rowCount][colCount] = new CaveCell(new Point(rowCount*70 + p1.x, colCount*70 + p1.y));
 			}
-			Cells.add(CellRow); //add cell array to outer array
 		}
 	}
 	
@@ -30,18 +28,55 @@ public class Cave {
 	 * nested loop takes each element in the arraylist and calls random on them
 	 */
 	public void randomize() {
-		for (int rowCount = 0; rowCount < ROW_COUNT; rowCount++) {
-			for (int colCount = 0; colCount < COLUMN_COUNT; colCount++) {
-				Cells.get(rowCount).get(colCount).randomize();
+		for (int rowCount = 0; rowCount < 10; rowCount++) {
+			for (int colCount = 0; colCount < 10; colCount++) {
+				cells[rowCount][colCount].randomize();
 			}
 		}
+		}
+	/**
+	 * nested loop paints each cell
+	 * @param g
+	 */
+	public void paintCave(Graphics g) {
+		for (int rowCount = 0; rowCount < 10; rowCount++) {
+			for (int colCount = 0; colCount < 10; colCount++) {
+				cells[rowCount][colCount].paint(g);;
+			}
+		}
+	}
+	/**
+	 * sets oxygen level and initiates helper with first box
+	 * @param level
+	 * @return
+	 */
+	public boolean escape(int level) {
+		int oxygen = 20;
+		boolean path = escapeHelper(0,0,oxygen, level);
+		if (path) {
+			
+		}
+		return path;
+	}
+	/**
+	 * 
+	 * @param row
+	 * @param column
+	 * @param oxygen
+	 * @param level
+	 * @return
+	 */
+	public boolean escapeHelper(int row, int column, int oxygen, int level) {
+		if (oxygen < 0 || row >= ROW_COUNT || column >= COLUMN_COUNT) {return false;} //base cases, check if oxygen is depleted (-1), or if we are at the last right or bottom square
+		CaveCell currentCell = cells[row][column];
+		if (currentCell.getDepth() > level) {return false;} //check our level against the cell depth
+		if (row == ROW_COUNT-1 && column == COLUMN_COUNT-1) { 
+			cells[ROW_COUNT-1][COLUMN_COUNT-1].setColor(Color.yellow);
+			return true;} //if we have reached the last box we return true
+		if (escapeHelper(row, column + 1, oxygen-1, level) || escapeHelper(row+1, column, oxygen-1, level)) {
+			cells[row][column].setColor(Color.yellow);
+			return true;} //smaller caller, check down || right
+		return false; //no path was found
 	}
 	
-	public void paintCave(Graphics g) {
-		for (int rowCount = 0; rowCount < ROW_COUNT; rowCount++) {
-			for (int colCount = 0; colCount < COLUMN_COUNT; colCount++) {
-				Cells.get(rowCount).get(colCount).paint(g);
-			}
-		}
-	}
 }

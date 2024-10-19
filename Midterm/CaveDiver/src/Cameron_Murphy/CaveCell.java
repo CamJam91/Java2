@@ -31,7 +31,9 @@ public class CaveCell{
 	public void setDepth(int depth) {
 		this.depth = depth;
 	}
-	
+	public void setColor(Color color) {
+		this.color = color;
+	}
 		//getters
 	public int getDepth() {
 		return depth;
@@ -39,12 +41,13 @@ public class CaveCell{
 	
 		//methods
 	/**
-	 * randomize depth int of cell
+	 * randomize depth int of cell as well as color
 	 */
 	public void randomize() {	
 		Random random = new Random();
 		int newDepth = random.nextInt(10);
 		depth = newDepth; 
+		color = new Color(13,234,179,(depth*25));
 	}
 	
 	/**

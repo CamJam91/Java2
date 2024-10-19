@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
@@ -26,14 +27,14 @@ public class CaveFrame extends JFrame {
 
 			//create border and add components
 		BorderLayout caveBorder = new BorderLayout();
-			//North component
+			//North component (instructions)
 		JLabel instructionsLB = new JLabel("The Diver begins in the upper left corner and escapes by reaching the lower-right corner.");
 		instructionsLB.setFont(instructionalFont);
 		instructionsLB.setBackground(null);
 		add(instructionsLB, BorderLayout.NORTH);
 		instructionsLB.setHorizontalAlignment(SwingConstants.CENTER);
 		
-			//South Component
+			//South Component (text area and buttons)
 		JLabel depthLB = new JLabel("Enter the diver's depth rating: ");
 		depthLB.setFont(instructionalFont);
 		TextField ratingTF = new TextField();
@@ -52,15 +53,25 @@ public class CaveFrame extends JFrame {
 		southPanel.add(caveBTN);
 		add(southPanel, BorderLayout.SOUTH);
 		
-			//Center Component
+			//Center Component (cave component)
 		CaveComponent cave = new CaveComponent();
 		add(cave, BorderLayout.CENTER);
 		
-			//buttons
+			//button actions
 		caveBTN.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				cave.randomize();
 				repaint();
+			}
+		});
+		escapeBTN.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event) {
+				int level = Integer.valueOf(ratingTF.getText()); //get level value from user
+					//call cave components escape that calls caves escape
+				boolean popUp = cave.escapeInitiate(level);
+				repaint();
+				if (popUp) { JOptionPane.showMessageDialog(null, "An escape was found!");}
+				else {JOptionPane.showMessageDialog(null, "No escape was found.");}
 			}
 		});
 	}

@@ -18,4 +18,9 @@ public class CaveComponent extends JComponent {
 	public void randomize() {
 		cave.randomize();
 	}
+	
+	public boolean escapeInitiate(int level) {
+		boolean escape = cave.escape(level);
+		return escape;
+	}
 }
