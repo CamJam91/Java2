@@ -50,6 +50,7 @@ class ClassificationTest {
 			//Act
 		int antsEaten = testFlyTrap.getAntsEaten();
 		String test = testFlyTrap.toString();
+		assertEquals(antsEaten, 0);
 		assertEquals(test, "Domain: Eukarya, Kingdom: Plantae Class: Angiosperms Order: Caryophyllales Family: Droseraceae Genus: Dionaea Species: D.Muscipula Name: Venus Fly Trap Ants Eaten: 0");
 	}
 
