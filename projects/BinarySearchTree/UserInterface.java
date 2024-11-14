@@ -16,7 +16,7 @@ public class UserInterface {
         do{
             System.out.printf("0) Quit \n1) Build a BST from a text file \n2) Print the Tree" +
                     "\n3) Add data \n4) Remove Data \n5) Show Tree Height \n6) Show internal path length" +
-                    "7) Count Absent Children \n8) Find a path sum \n9) Export a BST to a text file\n>>");
+                    "\n7) Count Absent Children \n8) Find a path sum \n9) Export a BST to a text file\n>>");
             userChoice = userInput.nextInt();
             switch (userChoice){
                 case 1: boolean success = buildTree();
@@ -29,6 +29,12 @@ public class UserInterface {
                 case 4: if (checkTree()) {removeNode();}
                 break;
                 case 5: if (checkTree()) {getHeight();}
+                break;
+                case 6: if (checkTree()) {getInternalPathLength();}
+                break;
+                case 7: if (checkTree()) {getAbsentChildren();}
+                break;
+                case 8: if (checkTree()) {getPathSum(userInput);}
                 break;
             }
 
@@ -100,6 +106,27 @@ public class UserInterface {
 
     public static void getHeight(){
         System.out.printf("The height of your EBST is: %d\n", userTree.getHeight(userTree.getRoot()));
+    }
+
+    /**
+     * call the GIPL method of the EBST and format output
+     */
+    public static void getInternalPathLength(){
+        int length = userTree.getInternalPathLength(userTree.getRoot());
+        System.out.printf("The Internal path length of your tree is: %d\n", length);
+    }
+
+    public static void getAbsentChildren(){
+        int absent = userTree.getAbsentChildren(userTree.getRoot());
+        System.out.printf("Absent children in your tree: %d\n", absent);
+    }
+
+    public static void getPathSum(Scanner userInput){
+        System.out.printf("Enter a pathsum to check: \n>>");
+        int pathNumber = userInput.nextInt();
+        boolean found = userTree.getPathSum(userTree.getRoot(), pathNumber);
+        if (found) { System.out.printf("\nThe value %d exists in a node in your tree", pathNumber);}
+        else { System.out.printf("\nThe value %d does not exist in a node in your tree\n", pathNumber);}
     }
 
     /**
