@@ -51,10 +51,43 @@ public class EnhancedBinarySearchTree extends BinarySearchTree{
      * @param currentNode
      */
     private static void postOrderPrint(Node currentNode){
+        if (currentNode == null) {return;}
         if (currentNode.left != null) {postOrderPrint(currentNode.left);}
         if (currentNode.right != null) {postOrderPrint(currentNode.right);}
         System.out.printf("%s ", currentNode.data);
     }
+
+    /**
+     * helper for obatining binary tree height
+     * @param root
+     * @return
+     */
+    public int getHeight(Node root){
+        if (root == null) {return 0;}
+        else {return height(root);}
+    }
+
+    /**
+     * called by height helper
+     * @param currentNode
+     * @return
+     */
+    private int height(Node currentNode){
+        if (currentNode == null) {return 0;}
+        return 1 + Math.max(height(currentNode.left), height(currentNode.right));
+    }
+
+    public int getInternalPathLength(Node root){
+        if (root == null) {return 0;}
+        else return internalPathLength(root);
+    }
+
+    private int internalPathLength(Node currentNode){
+        if (currentNode == null) {return 0;}
+        return 1;
+    }
+
+    
 
 
 

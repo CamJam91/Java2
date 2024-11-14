@@ -28,6 +28,8 @@ public class UserInterface {
                 break;
                 case 4: if (checkTree()) {removeNode();}
                 break;
+                case 5: if (checkTree()) {getHeight();}
+                break;
             }
 
         } while(userChoice != 0);
@@ -77,7 +79,7 @@ public class UserInterface {
     public static void addNode(){
         System.out.printf("Enter the data value for your new node\n>>");
         int nodeData = userInput.nextInt();
-        if ((userTree.find(nodeData))==true) {System.out.printf("That value already exists in your tree");}
+        if (userTree.find(Integer.valueOf(nodeData))) { System.out.printf("That value already exists in your tree");}
         else{
             userTree.add(nodeData);
             System.out.printf("Data added, here is your new tree:\n");
@@ -94,6 +96,10 @@ public class UserInterface {
             System.out.printf("Data deleted, here is your new tree:\n");
             userTree.print();
         }
+    }
+
+    public static void getHeight(){
+        System.out.printf("The height of your EBST is: %d\n", userTree.getHeight(userTree.getRoot()));
     }
 
     /**
