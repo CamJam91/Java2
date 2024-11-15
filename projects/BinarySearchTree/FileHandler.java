@@ -4,11 +4,12 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class FileHandler {
     private BufferedReader in;
-    private BufferedWriter out;
 
     //constructors
 
@@ -25,16 +26,12 @@ public class FileHandler {
         }
     }
 
-    //destructors
-    public void closeWriter(){
-        if (out != null) {
-            try {
-                out.close();
-            } catch (IOException fileNotFound) {
-                throw new RuntimeException(fileNotFound.getMessage());
-            }
-        }
+    //default constructor used for writing
+    public FileHandler(){
     }
+
+
+
 
     public void closeReader(){
         if (in != null) {
@@ -63,5 +60,21 @@ public class FileHandler {
     }
     return returnString;
 }
+
+    /**
+     * creates a BufferedWriter and writes String value of Integer to each line
+     * @param fileName
+     * @param data
+     */
+    public void fileExport(String fileName, ArrayList<Integer> data){
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))){
+           for (Integer integer : data){
+            writer.write(String.valueOf(integer));
+            writer.newLine();
+           } 
+        }catch(IOException e){
+            System.out.printf("File could not Be created");
+        }
+    }
 
 }

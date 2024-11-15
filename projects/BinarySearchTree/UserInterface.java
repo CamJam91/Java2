@@ -1,5 +1,6 @@
 //Cameron Murphy CIS 2217 R01
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -36,6 +37,8 @@ public class UserInterface {
                 break;
                 case 8: if (checkTree()) {getPathSum(userInput);}
                 break;
+                case 9: if (checkTree()) {saveTree();}
+                break;
             }
 
         } while(userChoice != 0);
@@ -45,7 +48,7 @@ public class UserInterface {
      * Helper for the fillTree method. Will take a file from user, validate and fill the EBST using fillTree 
      * @return
      */
-    public static boolean buildTree(){
+    private static boolean buildTree(){
             //does the file exist
         FileHandler fileTester;
         System.out.printf("\nEnter the name of your file.\n>>");
@@ -61,7 +64,21 @@ public class UserInterface {
         System.out.printf("Tree successfully created\n\n");
         return true;
     }
-    
+
+    /**
+     * creates a fileHandler then creates a list of data to write to is using the userTree getNodedata method()
+     */
+    private static void saveTree(){
+        FileHandler fileTester;
+        System.out.print("\nEnter a name to save your file:\n>>");
+        String fileName = userInput.next();
+        ArrayList<Integer> nodeData;
+        nodeData = userTree.getNodeData();
+        fileTester = new FileHandler();
+        fileTester.fileExport(fileName, nodeData);
+        System.out.printf("Your data has been saved\n");
+    }
+
     /**
      * Takes our data and fills our EBST
      * @param data

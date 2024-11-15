@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class EnhancedBinarySearchTree extends BinarySearchTree{
     
         //constructor
@@ -145,5 +147,27 @@ public class EnhancedBinarySearchTree extends BinarySearchTree{
         checkSum += (int)currentNode.data;
         if (currentNode.left == null && currentNode.right == null) {return checkSum == pathSum;}
         return pathSum(currentNode.left, pathSum, checkSum) || pathSum(currentNode.right, pathSum, checkSum); 
+    }
+
+    /**
+     * checks if node is null then uses preorderList to create array to return 
+     * @return
+     */
+    public ArrayList<Integer> getNodeData(){
+        ArrayList<Integer> nodeData = new ArrayList<>();
+        if (getRoot() == null) {return nodeData;}
+        preOrderList(getRoot(), nodeData);
+        return nodeData;
+    }
+
+    /**
+     * helper saves each nodes data to an array list in preorder
+     * @param currentNode
+     * @param nodeData
+     */
+    private void preOrderList(Node currentNode, ArrayList<Integer> nodeData){
+        nodeData.add((Integer)currentNode.data);
+        if (currentNode.left != null) {preOrderList(currentNode.left, nodeData);}
+        if (currentNode.right != null) {preOrderList(currentNode.right, nodeData);}
     }
 }
