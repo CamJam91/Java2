@@ -1,0 +1,44 @@
+package edu.sinclair.cameron_murphy;
+
+import java.awt.*;
+
+public class Oval extends Shape {
+	int width;
+	int height;
+	
+    public Oval() {
+    }
+
+    public Oval(Point p1, Point p2, Color c) {
+        super(p1, p2, c);
+        width = (int)(super.getP2().getX()-super.getP1().getX());
+        height = (int)(super.getP2().getY()-super.getP1().getY());
+    }
+
+    @Override
+    public void draw(Graphics g) {
+    	Graphics2D g2 = (Graphics2D)g;
+    	g2.setStroke(new BasicStroke(getLineWidth()));
+        g2.setColor(getColor());
+        g2.drawOval((int)(super.getP1().getX()), (int)(super.getP1().getY()), width, height);
+    }
+    /**
+     * Because parent shapes set p2 is useful in line but we need width and height, we override setP2 and leave component code alone
+     */
+    @Override
+    public void setP2(Point p) {
+    	super.setP2(p);
+    	if (super.getP2().getX() < super.getP1().getX()) {
+    		Point tempPoint = new Point((int)(getP2().getX()), (int)(getP2().getY()));
+    		setP2(new Point((int)(getP1().getX()), (int)(getP1().getY())));
+    		setP1(tempPoint);
+    	}
+    	if (super.getP2().getY() < super.getP1().getY()) {
+    		Point tempPoint = new Point((int)(getP2().getX()), (int)(getP2().getY()));
+    		setP2(new Point((int)(getP1().getX()), (int)(getP1().getY())));
+    		setP1(tempPoint);
+    	}
+    	width = (int)(super.getP2().getX()-super.getP1().getX());
+        height = (int)(super.getP2().getY()-super.getP1().getY());
+    }
+}

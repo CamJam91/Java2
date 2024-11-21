@@ -1,0 +1,31 @@
+package edu.sinclair.cameron_murphy;
+
+import java.awt.*;
+
+public class Box extends Shape {
+
+	int width;
+	int height;
+	
+    public Box() {
+    }
+
+    public Box(Point p1, Point p2, Color c) {
+        super(p1, p2, c);
+    }
+    	//getters
+    int getWidth() {
+    	return width;
+    }
+    int getHeight() {
+    	return height;
+    }
+
+    @Override
+    public void draw(Graphics g) {
+    	Graphics2D g2 = (Graphics2D)g;
+    	g2.setStroke(new BasicStroke(getLineWidth()));
+        g2.setColor(getColor());
+        g2.fillRect((int)(super.getP1().getX()), (int)(super.getP1().getY()), width, height);
+    }
+}

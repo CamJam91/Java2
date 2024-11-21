@@ -1,0 +1,7 @@
+package edu.sinclair.cameron_murphy;
+
+import javax.swing.JComponent;
+
+public class CanvasComponent extends JComponent {
+
+}
