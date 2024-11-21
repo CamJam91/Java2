@@ -1,7 +1,0 @@
-package edu.sinclair.cameron_murphy;
-
-import java.awt.Component;
-
-public class PictureComponent extends Component {
-
-}

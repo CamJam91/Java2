@@ -1,8 +1,0 @@
-package edu.sinclair.cameron_murphy;
-
-public class House {
-	HouseBase.draw();
-	Door.draw();
-	Roof.draw();
-	
-}

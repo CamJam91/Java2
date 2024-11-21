@@ -410,7 +410,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Z1QNgHRCEe-PcZr6dZtuUw" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_16vNUHkrEe-Y-fkI9W6zyw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_ZcUJPnRCEe-PcZr6dZtuUw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_R2XuoKbHEe-unJGbKvm4Fg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_ZcUJPnRCEe-PcZr6dZtuUw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Z1QNgXRCEe-PcZr6dZtuUw" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -418,8 +418,8 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Z1QNg3RCEe-PcZr6dZtuUw" elementId="org.eclipse.ui.workbench.edit">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_16wbcHkrEe-Y-fkI9W6zyw" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_ZcP3zHRCEe-PcZr6dZtuUw"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_16xCgHkrEe-Y-fkI9W6zyw" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_ZcRs9XRCEe-PcZr6dZtuUw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_R2Zj0KbHEe-unJGbKvm4Fg" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_ZcP3zHRCEe-PcZr6dZtuUw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_R2Zj0abHEe-unJGbKvm4Fg" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_ZcRs9XRCEe-PcZr6dZtuUw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Z1Q0kHRCEe-PcZr6dZtuUw" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -443,7 +443,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Z1Q0lHRCEe-PcZr6dZtuUw" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_16yQoHkrEe-Y-fkI9W6zyw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_ZcTiQ3RCEe-PcZr6dZtuUw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_R2ax8KbHEe-unJGbKvm4Fg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_ZcTiQ3RCEe-PcZr6dZtuUw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Z1Q0lXRCEe-PcZr6dZtuUw" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -770,6 +770,12 @@
     <bindings xmi:id="_ZdAsqHRCEe-PcZr6dZtuUw" keySequence="ALT+SHIFT+D T" command="_ZcM0ZXRCEe-PcZr6dZtuUw"/>
     <bindings xmi:id="_ZdAsqXRCEe-PcZr6dZtuUw" keySequence="ALT+SHIFT+D J" command="_ZcTiO3RCEe-PcZr6dZtuUw"/>
     <bindings xmi:id="_ZdAsqnRCEe-PcZr6dZtuUw" keySequence="ALT+SHIFT+D Q" command="_ZcRs5nRCEe-PcZr6dZtuUw"/>
+    <bindings xmi:id="_RlQJcKbHEe-unJGbKvm4Fg" keySequence="CTRL+SHIFT+U" command="_Rk15wabHEe-unJGbKvm4Fg"/>
+    <bindings xmi:id="_RlQwgKbHEe-unJGbKvm4Fg" keySequence="CTRL+SHIFT+J" command="_Rk15xKbHEe-unJGbKvm4Fg"/>
+    <bindings xmi:id="_RlQwgabHEe-unJGbKvm4Fg" keySequence="CTRL+SHIFT+M" command="_Rk15wKbHEe-unJGbKvm4Fg"/>
+    <bindings xmi:id="_RlR-oKbHEe-unJGbKvm4Fg" keySequence="CTRL+SHIFT+&lt;" command="_Rk1SsKbHEe-unJGbKvm4Fg"/>
+    <bindings xmi:id="_RlSlsKbHEe-unJGbKvm4Fg" keySequence="CTRL+U" command="_Rk1SsKbHEe-unJGbKvm4Fg"/>
+    <bindings xmi:id="_RlTz0KbHEe-unJGbKvm4Fg" keySequence="CTRL+&lt;" command="_Rk15xKbHEe-unJGbKvm4Fg"/>
   </bindingTables>
   <bindingTables xmi:id="_Zcw1BXRCEe-PcZr6dZtuUw" elementId="org.eclipse.jdt.ui.javaEditorScope" bindingContext="_ZcXzg3RCEe-PcZr6dZtuUw">
     <bindings xmi:id="_Zcw1BnRCEe-PcZr6dZtuUw" keySequence="CTRL+SHIFT+P" command="_ZcTiInRCEe-PcZr6dZtuUw"/>
@@ -2530,6 +2536,13 @@
   <commands xmi:id="_ZyBTU3RCEe-PcZr6dZtuUw" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.tasks.ui.open.repositories.view" commandName="Show Task Repositories View" description="Show Task Repositories View" category="_ZcKYI3RCEe-PcZr6dZtuUw"/>
   <commands xmi:id="_ZyBTVHRCEe-PcZr6dZtuUw" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.doc.legend.show.action" commandName="Show UI Legend" description="Show Tasks UI Legend" category="_ZcKYI3RCEe-PcZr6dZtuUw"/>
   <commands xmi:id="_ZyB6YHRCEe-PcZr6dZtuUw" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.context.ui.actions.tasklist.focus" commandName="Focus on Workweek" description="Focus on Workweek" category="_ZcKYI3RCEe-PcZr6dZtuUw"/>
+  <commands xmi:id="_Rk1SsKbHEe-unJGbKvm4Fg" elementId="org.junit.tools.handler.GenerateTestClass" commandName="Generate unit-test-class" description="Generate a unit test-class with test-cases" category="_Rk0roabHEe-unJGbKvm4Fg"/>
+  <commands xmi:id="_Rk1SsabHEe-unJGbKvm4Fg" elementId="org.junit.tools.handler.GenerateTestSuites" commandName="Generate test-suites" description="Generate test-suites" category="_ZcKYE3RCEe-PcZr6dZtuUw"/>
+  <commands xmi:id="_Rk15wKbHEe-unJGbKvm4Fg" elementId="org.junit.tools.handler.GenerateMockClass" commandName="Generates a mock-class" description="Generates a mock-class for the selected class" category="_ZcKYE3RCEe-PcZr6dZtuUw"/>
+  <commands xmi:id="_Rk15wabHEe-unJGbKvm4Fg" elementId="org.junit.tools.handler.GenerateSpringTestClass" commandName="Generate unit-test-class with Spring Context" description="Generate a unit test-class with Spring Context with test-cases" category="_Rk0roabHEe-unJGbKvm4Fg"/>
+  <commands xmi:id="_Rk15wqbHEe-unJGbKvm4Fg" elementId="org.junit.tools.handler.CleanMocks" commandName="Clean mock-classes" description="Clean mock-classes" category="_ZcKYE3RCEe-PcZr6dZtuUw"/>
+  <commands xmi:id="_Rk15w6bHEe-unJGbKvm4Fg" elementId="org.junit.tools.handler.CreateNecessaryTestsReport" commandName="Create report for necessary tests" description="Create report for necessary tests" category="_ZcKYE3RCEe-PcZr6dZtuUw"/>
+  <commands xmi:id="_Rk15xKbHEe-unJGbKvm4Fg" elementId="org.junit.tools.handler.SwitchClass" commandName="Switch test-class and -subject" description="Switches between test-class and test-subject" category="_Rk0roabHEe-unJGbKvm4Fg"/>
   <addons xmi:id="_Zbqo33RCEe-PcZr6dZtuUw" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_Zbqo4HRCEe-PcZr6dZtuUw" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_Zbqo4XRCEe-PcZr6dZtuUw" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -2541,7 +2554,7 @@
   <addons xmi:id="_Zbqo53RCEe-PcZr6dZtuUw" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_Zbqo6HRCEe-PcZr6dZtuUw" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_Zb1n8HRCEe-PcZr6dZtuUw" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_1qz68HkrEe-Y-fkI9W6zyw" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_ZcJxAHRCEe-PcZr6dZtuUw" elementId="org.eclipse.team.ui.category.team" name="Version control (Team)" description="Actions that apply when working with a version control system"/>
   <categories xmi:id="_ZcJxAXRCEe-PcZr6dZtuUw" elementId="org.eclipse.ui.category.views" name="Views" description="Commands for opening views"/>
@@ -2586,4 +2599,5 @@
   <categories xmi:id="_ZcKYInRCEe-PcZr6dZtuUw" elementId="org.eclipse.oomph.commands" name="Oomph"/>
   <categories xmi:id="_ZcKYI3RCEe-PcZr6dZtuUw" elementId="org.eclipse.core.commands.categories.autogenerated" name="Uncategorized" description="Commands that were either auto-generated or have no category"/>
   <categories xmi:id="_ZcKYJHRCEe-PcZr6dZtuUw" elementId="com.genuitec.eclipse.inlinesearch.commands.category" name="Inline Search"/>
+  <categories xmi:id="_Rk0roabHEe-unJGbKvm4Fg" elementId="org.junit.tools.commands.category" name="JUnitTools4Spring"/>
 </application:Application>
