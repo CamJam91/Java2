@@ -3,9 +3,13 @@ package murphy;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 import com.google.gson.Gson;
 
@@ -37,11 +41,46 @@ public class UserInterface {
                         break;
                 case 7: if (verifyArray()) {recentSearch(scanner);}
                         break;
+                case 8: if (verifyArray()) {classSort();}
+                        break;
                 default: break;
             }
         } while(userChoice != 0);
     }
 
+        /*
+         * 
+         * Display methods
+         * 
+         */
+    /**
+     * uses forEach method on a stream to print toString()'s
+     */
+    public static void displayData(Meteorite [] meteorites){
+       Stream meteoriteStream = Stream.of(meteorites);
+       meteoriteStream
+       .forEach(meteorite -> System.out.printf("%s\n",meteorite.toString()));
+    }
+    /**
+     * display helper displays a single meteorites dat or an error if it is null
+     * @param meteorite
+     */
+    public static void displayData(Meteorite meteorite){
+        if (meteorite == null) {System.out.printf("\nThe meteorite was not found.");}
+        else {System.out.printf("\nMeteorite data: \n %s\n\n", meteorite);}
+    }
+    public static void displayData(Map<String, Integer> recclasses){
+        Set<String> keySet = recclasses.keySet();
+            //for each key print it and the corresponding value in the map
+        keySet.stream()
+            .forEach(recclass -> System.out.printf("%s\t\t%d\n", recclass, recclasses.get(recclass)));
+    }
+
+    /*
+     * 
+     * User Methods
+     * 
+     */
     /**
      * uses gson to import default json file or user specified file
      * @param userChoice
@@ -62,23 +101,6 @@ public class UserInterface {
     }
 
     /**
-     * uses forEach method on a stream to print toString()'s
-     */
-    public static void displayData(Meteorite [] meteorites){
-       Stream meteoriteStream = Stream.of(meteorites);
-       meteoriteStream
-       .forEach(meteorite -> System.out.printf("%s\n",meteorite.toString()));
-    }
-    /**
-     * display helper displays a single meteorites dat or an error if it is null
-     * @param meteorite
-     */
-    public static void displayData(Meteorite meteorite){
-        if (meteorite == null) {System.out.printf("\nThe meteorite was not found.");}
-        else {System.out.printf("\nMeteorite data: \n %s\n\n", meteorite);}
-    }
-
-    /**
      * uses stream to find object name then calls display data with filled or null object
      * @param scanner
      */
@@ -86,7 +108,9 @@ public class UserInterface {
         scanner.nextLine(); //clear buffer
         System.out.printf("Enter the name of the meteorite you are searching for: \n>>");
         String meteoriteName = scanner.nextLine();
+            //look for name string (there will only be one so parallel and findany are used)
         Meteorite target = Stream.of(meteorites)
+            .parallel()
             .filter(meteorite -> meteorite.getName().equalsIgnoreCase(meteoriteName))
             .findAny()
             .orElse(null);
@@ -102,13 +126,17 @@ public class UserInterface {
         scanner.nextLine(); //clear buffer
         System.out.printf("Enter the name of the meteorite you are searching for: \n>>");
         String meteoriteID = scanner.nextLine();
+
+            //look for ID string (there will only be one so parallel and findany are used)
         Meteorite target = Stream.of(meteorites)
+            .parallel()
             .filter(meteorite -> meteorite.getID().equals(meteoriteID))
             .findAny()
             .orElse(null);
 
         displayData(target);
     }
+    
     /**
      * asks user for a limit then uses stream to give the largest massed objects (with user limit)
      * @param scanner
@@ -138,6 +166,24 @@ public class UserInterface {
             .toArray(Meteorite[] :: new);
 
         displayData(mostRecent);
+    }
+    /**
+     * creates a map of recclass string keys and occurrance values 
+     */
+    public static void classSort(){
+        Map<String, Integer> reclasses = new HashMap<>();
+            //creates string stream of unique meteorite name strings, adds them to map as keys
+        Stream.of(meteorites)
+            .map(meteorite -> meteorite.getRecclass())
+            .distinct()
+            .forEach(recclass -> reclasses.put(recclass, 0)); //grab recclass strings, add unique ones to our map
+            //creates a string stream of nonunique recclasses and updates map values each time for each one
+        Stream.of(meteorites)
+            .map(meteorite -> meteorite.getRecclass())
+            .forEach(recclass ->reclasses.put(recclass, (reclasses.get(recclass))+1));
+        
+        displayData(reclasses);
+        
     }
 
     /**
