@@ -42,14 +42,23 @@ public class Meteorite {
     public String getRecclass(){
         return recclass;
     }
-    public String mass(){
+    public String getMass(){
         return mass;
+    }
+    public Double getMassDouble(){
+        if (mass == null) return -1.0;
+        return Double.parseDouble(mass);
     }
     public String getFall(){
         return fall;
     }
     public String getYear(){
-        return year;
+        if (year == null) {return "-1";}
+        return year.substring(0, 4);
+    }
+    public Integer getYearInteger(){
+        if (year == null) {return -1;}
+        return Integer.parseInt(year.substring(0,4));
     }
     public String getReclat(){
         return reclat;
@@ -66,7 +75,7 @@ public class Meteorite {
     public String toString(){
         String returnString =  String.format("Name = %s, ID = %s, NameType = %s, Recclass = %s, Mass = %s," +
          "Fall = %s, Year: %s, reclat = %s, reclong = .%s, ",
-         name, id, nameType, recclass, mass, fall, year, reclat, reclong);
+         name, id, nameType, recclass, mass, fall, getYear(), reclat, reclong);
          if (geolocation != null) {returnString += String.format("Geolocation: %s", geolocation.toString());}
          return returnString;
     }

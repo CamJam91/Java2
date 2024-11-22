@@ -3,7 +3,9 @@ package murphy;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.Comparator;
 
 import com.google.gson.Gson;
 
@@ -25,9 +27,16 @@ public class UserInterface {
             switch (userChoice){
                 case 1: importData(scanner);
                         break;
-                case 2: if (verifyArray()) {displayData();}
+                case 2: if (verifyArray()) {displayData(meteorites);}
                         break;
-                case 4: if (verifyArray()) {meteoriteSearch();}
+                case 4: if (verifyArray()) {nameSearch(scanner);}
+                        break;
+                case 5: if (verifyArray()) {IDSearch(scanner);}
+                        break;
+                case 6: if (verifyArray()) {massSearch(scanner);}
+                        break;
+                case 7: if (verifyArray()) {recentSearch(scanner);}
+                        break;
                 default: break;
             }
         } while(userChoice != 0);
@@ -52,10 +61,83 @@ public class UserInterface {
         }
     }
 
-    public static void displayData(){
+    /**
+     * uses forEach method on a stream to print toString()'s
+     */
+    public static void displayData(Meteorite [] meteorites){
        Stream meteoriteStream = Stream.of(meteorites);
        meteoriteStream
        .forEach(meteorite -> System.out.printf("%s\n",meteorite.toString()));
+    }
+    /**
+     * display helper displays a single meteorites dat or an error if it is null
+     * @param meteorite
+     */
+    public static void displayData(Meteorite meteorite){
+        if (meteorite == null) {System.out.printf("\nThe meteorite was not found.");}
+        else {System.out.printf("\nMeteorite data: \n %s\n\n", meteorite);}
+    }
+
+    /**
+     * uses stream to find object name then calls display data with filled or null object
+     * @param scanner
+     */
+    public static void nameSearch(Scanner scanner){
+        scanner.nextLine(); //clear buffer
+        System.out.printf("Enter the name of the meteorite you are searching for: \n>>");
+        String meteoriteName = scanner.nextLine();
+        Meteorite target = Stream.of(meteorites)
+            .filter(meteorite -> meteorite.getName().equalsIgnoreCase(meteoriteName))
+            .findAny()
+            .orElse(null);
+            
+        displayData(target);
+    }
+
+    /**
+     * uses stream to find object name then calls display data with filled or null object
+     * @param scanner
+     */
+    public static void  IDSearch(Scanner scanner){
+        scanner.nextLine(); //clear buffer
+        System.out.printf("Enter the name of the meteorite you are searching for: \n>>");
+        String meteoriteID = scanner.nextLine();
+        Meteorite target = Stream.of(meteorites)
+            .filter(meteorite -> meteorite.getID().equals(meteoriteID))
+            .findAny()
+            .orElse(null);
+
+        displayData(target);
+    }
+    /**
+     * asks user for a limit then uses stream to give the largest massed objects (with user limit)
+     * @param scanner
+     */
+    public static void massSearch(Scanner scanner){
+        scanner.nextLine(); //clear buffer
+        System.out.printf("How many of the largest meteorites would you like to see?\n>>");
+        int userLimit = scanner.nextInt();
+        Meteorite [] largestMass = Stream.of(meteorites)
+            .sorted(Comparator.comparing(Meteorite::getMassDouble).reversed())
+            .limit(userLimit)
+            .toArray(Meteorite[] :: new);
+        
+        displayData(largestMass);
+    }
+    /**
+     * compares years then creates user limited array based on highest to lowest value
+     * @param scanner
+     */
+    public static void recentSearch(Scanner scanner){
+        scanner.nextLine(); //clear buffer
+        System.out.printf("How many of the most recent meteorites would you like to see?\n>>");
+        int userLimit = scanner.nextInt();
+        Meteorite [] mostRecent = Stream.of(meteorites) 
+            .sorted(Comparator.comparing(Meteorite::getYearInteger).reversed())
+            .limit(userLimit)
+            .toArray(Meteorite[] :: new);
+
+        displayData(mostRecent);
     }
 
     /**
