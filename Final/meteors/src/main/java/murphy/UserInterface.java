@@ -1,14 +1,14 @@
 package murphy;
 
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 
 import com.google.gson.Gson;
@@ -32,6 +32,8 @@ public class UserInterface {
                 case 1: importData(scanner);
                         break;
                 case 2: if (verifyArray()) {displayData(meteorites);}
+                        break;
+                case 3: if (verifyArray()) {saveData();}
                         break;
                 case 4: if (verifyArray()) {nameSearch(scanner);}
                         break;
@@ -73,7 +75,7 @@ public class UserInterface {
         Set<String> keySet = recclasses.keySet();
             //for each key print it and the corresponding value in the map
         keySet.stream()
-            .forEach(recclass -> System.out.printf("%s\t\t%d\n", recclass, recclasses.get(recclass)));
+            .forEach(recclass -> System.out.printf("%-30s\t\t%d\n", recclass, recclasses.get(recclass)));
     }
 
     /*
@@ -98,6 +100,21 @@ public class UserInterface {
         }catch(IOException e){
             System.out.printf("The file: %s was not found.", filePath);
         }
+    }
+
+    /**
+     * convert json data to binary then write to default file
+     */
+    public static void saveData(){
+        Gson gson = new Gson();
+        try (OutputStream outMeteorite = new FileOutputStream("NASA_Meteorite.json")){
+            String meteoritedata = gson.toJson(meteorites);
+            byte[] byteData = meteoritedata.getBytes("UTF-8");
+            outMeteorite.write(byteData);
+        }catch (IOException e){
+            System.out.printf("File write failure\n");
+        }
+        
     }
 
     /**

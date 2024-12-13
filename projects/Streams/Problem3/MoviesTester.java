@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,27 +37,52 @@ public class MoviesTester
     * Given a Stream<Movie> return the 100 most common
     * starting words.
     */
+    //first word
+    //most used in descending order
+    //limit 100
+    //sorted alphabetically
    public static List<String> commonInitialWords(Stream<Movie> stream) {
       List<String> commonsList = new ArrayList<>();
       Map<String, Integer> commonsMap = new HashMap<>();
       stream
          .map(movie -> movie.getTitle())
-         .distinct()
          .forEach(title -> {
-            String firstWord = title.split("\\s+")[0];
-            commonsMap.put(firstWord, commonsMap.getOrDefault(firstWord, 0) + 1); // Increment count
-            //commonsMap.put(title.split("\\s+")[0],(commonsMap.get(title))+1);
+            String firstWord = title.split("\\s+")[0]; //grab first word
+               //put word in map if it doesn't exist increment it's value by 1 if it does
+            commonsMap.put(firstWord, commonsMap.getOrDefault(firstWord, 0) + 1);
          });
-      
       Stream<Map.Entry<String, Integer>> commonsStream = commonsMap.entrySet().stream(); //turn map into stream
-         commonsList = commonsStream.sorted(Map.Entry.comparingByValue())
-         .sorted(Map.Entry.comparingByKey())
-         .map(Map.Entry::getKey)
+         commonsList = commonsStream.sorted(Map.Entry.comparingByValue(new TitleComparator()))  //sort by value using the comparator
+         .map(Map.Entry::getKey) //get a stream of key strings
          .limit(100)
          .collect(Collectors.toList());
       System.out.print(commonsList);
       return commonsList;
+      
    }
+   
+  
+   static class AlphaComparator implements Comparator<String> {
+      @Override
+      public int compare(String title1, String title2){
+         int compare = title1.compareTo(title2);
+         if (compare > 0) {return -1;}
+         else if (compare < 0) {return 1;}
+         else {return 0;}
+      }
+   }
+
+   static class TitleComparator implements Comparator<Integer> {
+      @Override
+      public int compare(Integer title1, Integer title2){
+         int compare = title1.compareTo(title2);
+         if (compare > 0) {return -1;}
+         else if (compare < 0) {return 1;}
+         else {return 0;}
+      }
+   }
+
+   
 
       
       
